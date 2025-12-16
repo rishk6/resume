@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Rishabh Kumar - Geotechnical Engineer</title>
+<style>
+:root {
+  --accent1: #00e0ff;
+  --accent2: #8a2be2;
+  --bg-dark: #0d1b2a;
+  --glass: rgba(255,255,255,.05);
+  --text: #e6eef8;
+  --muted: rgba(255,255,255,.82);
+}
+
+/* --- Reset and Base Styles --- */
+* { 
+  box-sizing: border-box; margin: 0; padding: 0; 
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+body { 
+  font-family: 'Segoe UI', Arial, sans-serif; 
+  background: var(--bg-dark); 
+  color: var(--text); 
+  line-height: 1.6; 
+  overflow-x: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* --- Unified Aurora Borealis Background for Entire Site --- */
+body::before {
+  content: '';
+  position: fixed;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: 
+    radial-gradient(ellipse 1200px 400px at 25% 85%, rgba(0,255,150,0.55) 0%, rgba(0,255,150,0.25) 40%, transparent 80%),
+    radial-gradient(ellipse 1000px 300px at 75% 15%, rgba(138,43,226,0.6) 0%, rgba(138,43,226,0.3) 45%, transparent 85%),
+    radial-gradient(ellipse 1100px 350px at 50% 70%, rgba(0,224,255,0.5) 0%, rgba(0,224,255,0.2) 50%, transparent 90%),
+    radial-gradient(ellipse 800px 200px at 30% 25%, rgba(255,0,150,0.45) 0%, rgba(255,0,150,0.18) 40%, transparent 75%),
+    radial-gradient(ellipse 900px 250px at 85% 80%, rgba(0,255,200,0.48) 0%, rgba(0,255,200,0.2) 45%, transparent 80%);
+  filter: blur(40px); /* was 60px */
+  opacity: 0.9;       /* stronger visibility */
+  animation: siteAurora1 16s ease-in-out infinite;
+  z-index: -2;
+  pointer-events: none;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: -20%;
+  width: 140%;
+  height: 140%;
+  background: 
+    radial-gradient(ellipse 800px 180px at 60% 95%, rgba(100,255,200,0.45) 0%, rgba(100,255,200,0.2) 50%, transparent 85%),
+    radial-gradient(ellipse 700px 150px at 20% 5%, rgba(255,100,255,0.42) 0%, rgba(255,100,255,0.18) 45%, transparent 80%),
+    radial-gradient(ellipse 600px 120px at 90% 45%, rgba(150,200,255,0.4) 0%, rgba(150,200,255,0.16) 40%, transparent 75%),
+    radial-gradient(ellipse 500px 100px at 10% 75%, rgba(255,150,100,0.38) 0%, rgba(255,150,100,0.15) 35%, transparent 70%),
+    radial-gradient(ellipse 650px 140px at 80% 20%, rgba(200,100,255,0.44) 0%, rgba(200,100,255,0.18) 50%, transparent 85%);
+  filter: blur(35px); /* was 45px */
+  opacity: 0.8;
+  animation: siteAurora2 20s ease-in-out infinite reverse;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes siteAurora1 {
+  0% { 
+    transform: translateX(-10%) translateY(5%) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  25% { 
+    transform: translateX(15%) translateY(-10%) rotate(3deg) scale(1.1);
+    opacity: 0.8;
+  }
+  50% { 
+    transform: translateX(25%) translateY(-20%) rotate(-2deg) scale(0.9);
+    opacity: 0.5;
+  }
+  75% { 
+    transform: translateX(-5%) translateY(-5%) rotate(5deg) scale(1.05);
+    opacity: 0.7;
+  }
+  100% { 
+    transform: translateX(-10%) translateY(5%) rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes siteAurora2 {
+  0% { 
+    transform: translateX(20%) translateY(-15%) rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+  30% { 
+    transform: translateX(-15%) translateY(10%) rotate(-4deg) scale(1.2);
+    opacity: 0.6;
+  }
+  60% { 
+    transform: translateX(-25%) translateY(25%) rotate(6deg) scale(0.8);
+    opacity: 0.3;
+  }
+  90% { 
+    transform: translateX(5%) translateY(-5%) rotate(-8deg) scale(1.1);
+    opacity: 0.5;
+  }
+  100% { 
+    transform: translateX(20%) translateY(-15%) rotate(0deg) scale(1);
+    opacity: 0.4;
+  }
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 100px;}
+
+/* --- Enhanced Page Transitions --- */
+.page {
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  z-index: 1;
+}
+.page.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page.hidden {
+  display: none;
+}
+
+/* --- Header with enhanced animations --- */
+header { 
+  position: fixed; top:0; left:0; right:0; z-index:1100; 
+  display: flex; justify-content:space-between; align-items:center; 
+  padding:12px 20px; 
+  background:rgba(0,0,0,0.4); 
+  backdrop-filter:blur(12px); 
+  border-bottom:1px solid rgba(255,255,255,.08);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+header:hover {
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(16px);
+}
+
+.logo {
+  display:flex; align-items:center; gap:12px; cursor:pointer;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+.logo:hover {
+  transform: translateY(-2px);
+}
+
+.rk-box {
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--accent1),var(--accent2));
+  color:#fff;font-weight:900; font-size:1.1rem; letter-spacing:.5px;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 4px 15px rgba(0,224,255,.3);
+}
+.rk-box:hover {
+  transform: rotate(-5deg) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,224,255,.5);
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+  color: var(--text); /* fallback default */
+}
+
+.logo:hover .logo-text {
+  background: linear-gradient(45deg, var(--accent1), var(--accent2));
+  
+  /* WebKit browsers */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Standards-compliant browsers */
+  background-clip: text;
+  color: transparent;
+}
+
+.menu-toggle { 
+  font-size:1.8rem; padding:8px; border-radius:8px; cursor:pointer; 
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+.menu-toggle::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(0,224,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+.menu-toggle:hover::before {
+  left: 100%;
+}
+.menu-toggle:hover {
+  background: rgba(255,255,255,.1);
+  transform: rotate(180deg) scale(1.1);
+}
+
+/* --- Enhanced Mobile Nav Menu with Smooth Transitions --- */
+.menu { 
+  position:fixed; top:0; right:-100%; width:min(70vw,350px); height:100vh; 
+  background:rgba(0,0,0,0.4); backdrop-filter:blur(15px); 
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); 
+  padding:80px 20px 20px; z-index:1200;
+  opacity: 0;
+  visibility: hidden;
+  border-left: 1px solid rgba(255,255,255,0.1);
+  transform: translateX(100%);
+}
+.menu.active { 
+  right:0; 
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0%);
+}
+.menu a { 
+  display:block; padding:16px 0; color:#fff; text-decoration:none; 
+  font-size:1.05rem; font-weight:600; letter-spacing:1.2px; 
+  border-bottom:1px solid rgba(255,255,255,0.08); 
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  overflow: hidden;
+  transform: translateX(30px);
+  opacity: 0;
+}
+.menu.active a {
+  transform: translateX(0);
+  opacity: 1;
+}
+.menu.active a:nth-child(1) { transition-delay: 0.1s; }
+.menu.active a:nth-child(2) { transition-delay: 0.2s; }
+.menu.active a:nth-child(3) { transition-delay: 0.3s; }
+.menu.active a:nth-child(4) { transition-delay: 0.4s; }
+.menu.active a:nth-child(5) { transition-delay: 0.5s; }
+.menu.active a:nth-child(6) { transition-delay: 0.6s; }
+.menu.active a:nth-child(7) { transition-delay: 0.7s; }
+.menu.active a:nth-child(8) { transition-delay: 0.8s; }
+.menu a::before {
+  content: '';
+  position: absolute;
+  left: -100%; top: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,224,255,0.1), transparent);
+  transition: left 0.4s ease;
+}
+.menu a:hover::before {
+  left: 100%;
+}
+.menu a:hover { 
+  color:var(--accent1); 
+  padding-left:12px;
+  text-shadow: 0 0 10px rgba(0,224,255,0.5);
+}
+
+/* --- Enhanced HERO section --- */
+.hero {
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:80px 20px 40px;text-align:center;position:relative;overflow:hidden;
+}
+
+.hero-canvas { 
+  position:absolute; inset:0; width:100%; height:100%; z-index:2; pointer-events:none;
+}
+.hero img{
+  width:280px;height:280px;object-fit:cover;border-radius:16px;padding:6px;
+  border:4px solid transparent;
+  background:linear-gradient(45deg,var(--accent1),var(--accent2));
+  box-shadow:0 0 40px rgba(0,224,255,.6),0 12px 40px rgba(0,0,0,.4);
+  position:relative;z-index:10;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation: heroImageFloat 6s ease-in-out infinite;
+}
+@keyframes heroImageFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+.hero img:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow:0 0 60px rgba(0,224,255,.8),0 20px 50px rgba(0,0,0,.5);
+}
+
+.hero h1{
+  margin-top:20px;font-size:2.1rem;font-weight:600;
+  text-shadow:0 4px 15px rgba(0,0,0,.7);z-index:10;
+  animation: heroTextGlow 4s ease-in-out infinite alternate;
+}
+@keyframes heroTextGlow {
+  0% { text-shadow: 0 4px 15px rgba(0,0,0,.7); }
+  100% { text-shadow: 0 4px 15px rgba(0,224,255,.3), 0 0 20px rgba(0,224,255,.2); }
+}
+
+.hero p{
+  font-size:1.05rem;color:var(--muted);margin:16px 0 24px;max-width:600px;z-index:10;
+  animation: fadeInUp 0.8s ease 0.3s both;
+  line-height: 1.5;
+  font-weight: 400;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border:none;border-radius:12px;
+  background:linear-gradient(45deg,var(--accent1),var(--accent2));color:#fff;text-decoration:none;
+  font-weight:600;font-size:1rem;box-shadow:0 6px 20px rgba(0,224,255,.4);cursor:pointer;z-index:10;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.6s ease;
+}
+.btn:hover::before {
+  left: 100%;
+}
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow:0 12px 30px rgba(0,224,255,.6);
+}
+.btn svg{width:20px;height:20px;}
+
+/* --- Separator Line Between Hero and Main Content --- */
+.hero-separator {
+  width: 80%;
+  height: 2px;
+  margin: 40px auto;
+  background: linear-gradient(90deg, transparent, var(--accent1), var(--accent2), transparent);
+  border-radius: 50px;
+  box-shadow: 0 0 10px var(--accent1), 0 0 20px var(--accent2);
+}
+
+/* --- Enhanced Main content --- */
+.main-content {
+  position: relative;
+  padding-bottom: 10px;
+  z-index: 1;
+}
+
+/* --- Enhanced Section and Quote Boxes --- */
+.section,
+.quote-section,
+.contact-section {
+  max-width: 1100px;
+  margin: 100px auto 0 auto;
+  padding: 32px;
+
+  background: rgba(20, 30, 40, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  box-shadow: 0 0 25px rgba(0, 224, 255, 0.15),
+              0 0 35px rgba(138, 43, 226, 0.15);
+
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Aurora Glow Hover Effect --- */
+.section:hover,
+.quote-section:hover,
+.contact-section:hover {
+   background: linear-gradient(
+    135deg,
+    rgba(0, 224, 255, 0.15),
+    rgba(138, 43, 226, 0.15),
+    rgba(20, 30, 40, 0.7)
+  );
+  transform: translateY(-5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 35px rgba(0, 224, 255, 0.3),
+              0 0 50px rgba(138, 43, 226, 0.3);
+}
+
+.quote-section {
+  text-align: center;
+}
+.contact-section {
+  margin: 80px auto 30px auto; /* top, auto left/right, bottom */
+  text-align: center;           /* centers text + inline elements */
+}
+
+/* Quote Section - Always Expanded */
+.quote-text {
+  font-size: 1.3rem;
+  color: var(--accent1);
+  font-style: italic;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(0,224,255,.3);
+  line-height: 1.4;
+}
+
+.about-line {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.section>*{position: relative;z-index:2;}
+.quote-section>*{position: relative;z-index:2;}
+
+/* Section headers - no toggle functionality */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  transition: all 0.3s ease;
+}
+
+.section-header h2 {
+  text-shadow: 0 0 15px rgba(0,224,255,.5);
+}
+
+.section h2 { 
+  color:var(--accent1); margin-bottom:0; font-size:1.6rem; 
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.toggle-arrow {
+  display: none; /* Hide toggle arrow since sections are always expanded */
+}
+
+.section-content {
+  display: block;
+  opacity: 1;
+}
+
+/* --- Enhanced Skills --- */
+.skills-container { display:flex; flex-wrap:wrap; gap:14px; margin-top:12px;}
+.skill-box {
+  display:inline-block;padding:10px 18px;
+  background:linear-gradient(135deg,rgba(0,224,255,0.15),rgba(138,43,226,0.13));
+  border:1px solid rgba(0,224,255,0.25);border-radius:14px;color:var(--text);
+  font-weight:600;font-size:0.9rem;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+.skill-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(0,224,255,0.3), transparent);
+  transition: left 0.5s ease;
+}
+.skill-box:hover::before {
+  left: 100%;
+}
+.skill-box:hover {
+  background:linear-gradient(135deg,rgba(0,224,255,0.25),rgba(138,43,226,0.23));
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,224,255,.3);
+}
+
+/* --- Enhanced Timeline Items --- */
+.timeline-item {
+  background:rgba(255,255,255,.06);
+  border-radius:18px;
+  margin-bottom:20px;
+  padding:24px;
+  border:1px solid rgba(255,255,255,.08);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0,224,255,0.05), transparent);
+  transition: left 0.6s ease;
+}
+.timeline-item:hover::before {
+  left: 100%;
+}
+.timeline-item:hover {
+  transform: translateX(5px);
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow: 0 8px 25px rgba(0,0,0,.3);
+}
+
+.item-head {
+  display:flex;justify-content:space-between;align-items:flex-start;gap:16px;cursor:pointer;
+  transition: all 0.3s ease;
+}
+.item-head:hover .item-title {
+  color: var(--accent1);
+}
+
+.item-title {font-weight:600;font-size:1.05rem; transition: color 0.3s ease;}
+.item-meta {color:var(--muted);font-size:.88rem;margin-top:6px;font-weight:400;}
+
+.arrow {
+  width:20px; height:20px;opacity:.7;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  filter: drop-shadow(0 0 5px rgba(0,224,255,.3));
+}
+.item-open .arrow{
+  transform:rotate(180deg) scale(1.1);
+  opacity: 1;
+}
+
+.item-content{
+  display: none;
+  opacity: 0;
+  margin-top: 16px;
+}
+.item-open .item-content{
+  display: block;
+  animation: smoothContentReveal 0.5s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+@keyframes smoothContentReveal {
+  0% { 
+    opacity: 0; 
+    transform: translateY(-15px) scale(0.98); 
+    filter: blur(2px);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1); 
+    filter: blur(0);
+  }
+}
+
+.custom-list { list-style: none; margin: 16px 0; padding: 0;}
+.custom-list li { 
+  position: relative; padding-left: 28px; margin-bottom: 12px; color: var(--muted);
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.custom-list li:hover {
+  color: var(--text);
+  padding-left: 32px;
+}
+.custom-list li::before { 
+  content: '▶'; position: absolute; left: 0; top: 0; color: var(--accent1);
+  transition: all 0.3s ease;
+}
+.custom-list li:hover::before {
+  transform: scale(1.2);
+  text-shadow: 0 0 8px rgba(0,224,255,.6);
+}
+
+.cgpa { 
+  display:inline-block; margin-top:8px; margin-bottom: 12px; padding:8px 16px; 
+  border-radius:14px; background:rgba(0,224,255,.15); color:#86e7ff;
+  font-weight:700; font-size:.85rem; border:1px solid rgba(0,224,255,.25);
+  transition: all 0.3s ease;
+}
+.cgpa:hover {
+  background:rgba(0,224,255,.25);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0,224,255,.3);
+}
+
+/* --- Contact Grid with Neon Icons --- */
+.contact-section h2 {
+  color:var(--accent1); margin-bottom:20px; font-size:1.6rem; 
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  font-weight: 600;
+}
+
+.contact-section:hover h2 {
+  text-shadow: 0 0 15px rgba(0,224,255,.5);
+}
+
+.contact-text {
+  color:var(--muted);margin-bottom:30px;text-align:center;
+  position: relative;
+  z-index: 2;
+  font-size: 1.02rem;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.contact-grid {display:flex;justify-content:center;gap:50px;flex-wrap:wrap;position: relative;z-index: 2;}
+.contact-grid a {
+  display:flex; align-items:center; justify-content:center;
+  width: 60px; height: 60px;
+  text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.contact-grid a::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 70%; height: 70%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: linear-gradient(45deg, var(--accent1), var(--accent2));
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: -1;
+}
+
+.contact-grid a:hover::before {
+  opacity: 0.2;
+  transform: translate(-50%, -50%) scale(1.3);
+}
+
+.contact-grid a:hover {
+  transform: translateY(-8px) scale(1.15);
+}
+
+/* Neon Icon Styles */
+.neon-icon {
+  width: 28px; 
+  height: 28px; 
+  stroke: var(--accent1);
+  stroke-width: 2;
+  fill: none;
+  filter: drop-shadow(0 0 8px rgba(0,224,255,0.6));
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.contact-grid a:hover .neon-icon {
+  stroke: #fff;
+  filter: drop-shadow(0 0 15px rgba(0,224,255,0.9)) drop-shadow(0 0 25px rgba(0,224,255,0.6));
+  transform: scale(1.1);
+}
+
+/* Enhanced Page Navigation */
+.page-nav {
+  position: fixed;
+  top: 50%;
+  right: 40px;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.page-nav-btn {
+  padding: 16px 20px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(15px);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0,0,0,.3);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-nav-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(0,224,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.page-nav-btn:hover::before {
+  left: 100%;
+}
+
+.page-nav-btn.active {
+  background: linear-gradient(135deg, var(--accent1), var(--accent2));
+  color: white;
+  box-shadow: 0 12px 30px rgba(0,224,255,.4);
+  transform: translateX(-5px) scale(1.05);
+}
+
+.page-nav-btn:hover:not(.active) {
+  background: rgba(255,255,255,0.08);
+  transform: translateX(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0,224,255,.2);
+  border: 1px solid rgba(0,224,255,0.3);
+}
+
+/* --- prefix before each project to appear in a different color and in italics --- */
+.prefix {
+  font-style: italic;      
+  color: #d34141;  
+  font-weight: 500;         
+  margin-right: 6px;    
+}
+.item-title {
+  font-size: 18px;    
+  color: #E0E0E0;    
+}
+
+/* --- Floating Neon Light Saber Scroll Bar --- */
+#scroll-progress {
+  position: fixed;
+  bottom: 30px;                  
+  left: 50%;
+  transform: translateX(-50%);
+  height: 8px;                
+  width: 70%;                    
+  background: transparent;
+  border-radius: 50px;           /* fully rounded */
+  overflow: hidden;
+  z-index: 2000;
+  opacity: 0;                    /* hidden until scroll */
+  transition: opacity 0.6s ease; /* smooth fade */
+}
+
+#scroll-progress::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: var(--scroll, 0%);
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  border-radius: 50px;           /* rounded edges = saber tips */
+
+  /* Smooth glowing saber effect */
+  box-shadow: 
+    0 0 6px var(--accent1),
+    0 0 15px var(--accent1),
+    0 0 10px var(--accent2),
+    0 0 20px var(--accent2);
+
+  animation: saberPulse 4s ease-in-out infinite;
+}
+
+/* Smooth pulsing glow */
+@keyframes saberPulse {
+  0%   { box-shadow: 0 0 6px var(--accent1), 0 0 12px var(--accent1), 0 0 8px var(--accent2), 0 0 16px var(--accent2); }
+  50%  { box-shadow: 0 0 12px var(--accent1), 0 0 25px var(--accent1), 0 0 18px var(--accent2), 0 0 30px var(--accent2); }
+  100% { box-shadow: 0 0 6px var(--accent1), 0 0 12px var(--accent1), 0 0 8px var(--accent2), 0 0 16px var(--accent2); }
+}
+
+/* --- Responsive Enhancements --- */
+@media (max-width:768px){
+  .section, .quote-section, .contact-section{margin:60px 16px 0 16px; padding:24px;} 
+  .skills-container{gap:10px;} 
+  .page-nav {
+    right: 20px;
+  }
+  .page-nav-btn {
+    padding: 12px 16px;
+    min-width: 80px;
+    font-size: 0.8rem;
+  }
+}
+@media (max-width:480px){
+  .section, .quote-section, .contact-section{margin:40px 8px 0 8px; padding:16px;} 
+  .skills-container{gap:8px;}
+  .contact-grid{gap:25px;}
+  .page-nav {
+    right: 15px;
+    gap: 15px;
+  }
+  .page-nav-btn {
+    padding: 10px 14px;
+    min-width: 70px;
+    font-size: 0.75rem;
+  }
+}
+
+#site-credit {
+  margin-top:50px; text-align:center; color:rgba(255,255,255,.5); 
+  font-size:.95rem; margin-bottom:20px;
+}
+
+/* Train Separator Styles */
+.train-separator {
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-dark);
+  margin-bottom: 50px;
+}
+.rail-track {
+  display: block;
+  width: 100%;
+  height: 80px;
+}
+.train {
+  animation: glideTrain 12s linear infinite;
+  filter: drop-shadow(0 4px 6px rgba(0, 224, 255, 0.6));
+  transform-origin: center;
+  position: relative;
+  top: -12px; /* hover above the track */
+  will-change: transform;
+}
+
+@keyframes glideTrain {
+  0%   { transform: translate3d(-200px, 0, 0) translateY(0); }
+  25%  { transform: translate3d(25%, -2px, 0); }
+  50%  { transform: translate3d(60%, 0, 0); }
+  75%  { transform: translate3d(85%, -2px, 0); }
+  100% { transform: translate3d(100%, 0, 0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .rail-track {
+    height: 50px;
+    transform: scaleY(0.8);
+    transform-origin: top; }
+}
+
+/* Footer */
+footer { text-align:center; color:rgba(255,255,255,.5); margin:50px 0 20px; font-size:.95rem; }
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo clickable" onclick="showPage('page1')">
+    <div class="rk-box">RK</div>
+    <div class="logo-text">Rishabh Kumar</div>
+  </div>
+  <div class="menu-toggle clickable" onclick="toggleMenu()">&#9776;</div>
+</header>
+
+<!-- Navigation Menu -->
+<nav id="menu" class="menu">
+  <a href="#hero" onclick="navigateTo('hero','page1')">HOME</a>
+  <a href="#skills" onclick="navigateTo('skills','page1')">SKILLS</a>
+  <a href="#experience" onclick="navigateTo('experience','page1')">EXPERIENCE</a>
+  <a href="#education" onclick="navigateTo('education','page1')">EDUCATION</a>
+  <!-- <a href="#publications" onclick="navigateTo('publications', 'page2')">PUBLICATIONS</a> -->
+  <a href="#projects" onclick="navigateTo('projects','page2')">PROJECTS</a>
+  <a href="#certificates" onclick="navigateTo('certificates','page2')">CERTIFICATES</a>
+  <a href="#contact" onclick="navigateTo('contact','page1')">CONTACT</a>
+</nav>
+
+<!-- Enhanced Page Navigation -->
+<div class="page-nav">
+  <button class="page-nav-btn active" data-page="page1" onclick="showPage('page1')" title="Profile">Profile</button>
+  <button class="page-nav-btn" data-page="page2" onclick="showPage('page2')" title="Work">Work</button>
+  <!-- Example of a third page
+  <button class="page-nav-btn" data-page="page3" onclick="showPage('page3')" title="Research">Research</button -->
+</div>
+
+<!-- Page 1 -->
+<div id="page1Page" class="page active">
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <img src="images/photo.jpg" alt="Rishabh Kumar" />
+    <h1>Rishabh Kumar</h1>
+    <p>M.Tech (IIT Hyderabad) - Geotechnical engineer focused on soil dynamics using advanced FEM techniques and ML integration.</p>
+    <a class="btn clickable" href="https://drive.google.com/file/d/1h4eYOCW9JvQQV3ntfv54p_54mb--tIcH/view?usp=sharing" target="_blank" download>
+      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v4h4V9h3.67L12 2z"/></svg>
+      Download CV
+    </a>
+  </section>
+  
+<!-- Realistic Rail Separator -->
+<div class="train-separator">
+  <svg class="rail-track" viewBox="0 0 800 80" preserveAspectRatio="none">
+    <!-- Ballast -->
+    <polygon points="0,80 0,60 800,60 800,80" fill="#2e3b46"/>
+    <!-- Ties (thinner and wider) -->
+    <g fill="#5a5048">
+      <rect x="0"   y="54" width="800" height="6"/>
+      <rect x="0"   y="62" width="800" height="4"/>
+    </g>
+    <!-- Rails -->
+    <g stroke="#999" stroke-width="4" stroke-linecap="round">
+      <line x1="0" y1="50" x2="800" y2="50"/>
+      <line x1="0" y1="54" x2="800" y2="54"/>
+    </g>
+    <!-- Gravel stones for ballast texture -->
+    <g fill="#3b4a58">
+      <!-- random small stones -->
+      <circle cx="30"  cy="68" r="1.5"/>
+      <circle cx="80"  cy="65" r="1.2"/>
+      <circle cx="130" cy="70" r="1.8"/>
+      <circle cx="180" cy="67" r="1.3"/>
+      <!-- repeat at intervals -->
+    </g>
+    <!-- Train (old style or your preferred train) -->
+    <g class="train" transform="translate(-200,-15)">
+      <rect x="0" y="30" width="150" height="20" rx="10" fill="url(#trainGrad)"/>
+      <!-- Windows -->
+      <rect x="20" y="34" width="24" height="12" rx="2" ry="2" fill="#eef"/>
+      <rect x="60" y="34" width="24" height="12" rx="2" ry="2" fill="#eef"/>
+      <rect x="100" y="34" width="24" height="12" rx="2" ry="2" fill="#eef"/>
+    </g>
+  
+    <!-- Gradient for train body -->
+    <defs>
+      <linearGradient id="trainGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#b91f1f"/>       <!-- rich red -->
+        <stop offset="100%" stop-color="#6a0dad"/>     <!-- deep purple -->
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
+  +<div class="main-content">
+    <!-- Quote/About Section -->
+<section class="quote-section">
+      <div class="quote-text">"The ground may be silent, but its dynamics shape the future of our infrastructure."</div>
+      <div class="about-line">Working at <b>IISc Bangalore</b> on soil settlement and geotechnical behavior, combining site
+        investigations and data collection with soil dynamics research and FEM modeling Conducting numerical simulations
+        and experiments to understand soil - structure interaction under dynamic and static loads.</div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="section-header">
+        <h2>🧰 Skills</h2>
+      </div>
+      <div class="section-content">
+    
+        <h3 class="item-title" style="color:var(--accent1); font-weight:700; margin:24px 0 12px;">🏗️ Civil & Geotechnical</h3>
+        <div class="skills-container">
+          <div class="skill-box">Soil Dynamics</div><div class="skill-box">Railway Geotechnics</div>
+          <div class="skill-box">Vibration Analysis</div><div class="skill-box">Triaxial Testing</div>
+          <div class="skill-box">ERT</div><div class="skill-box">Ground Imrovement</div>
+          <div class="skill-box">GPR</div><div class="skill-box">Site Investigation</div>
+        </div>
+
+        <h3 class="item-title" style="color:var(--accent1); font-weight:700; margin:24px 0 12px;">💻 Software & Programming</h3>
+        <div class="skills-container">
+          <div class="skill-box">AutoCAD</div><div class="skill-box">Abaqus CAE</div>
+          <div class="skill-box">PLAXIS 2D/3D</div><div class="skill-box">MATLAB</div>
+          <div class="skill-box">ETABS</div><div class="skill-box">MS Office</div>
+          <div class="skill-box">MS Project</div><div class="skill-box">Primavera</div>
+          <div class="skill-box">Python</div><div class="skill-box">TensorFlow</div>
+          <div class="skill-box">PyTorch</div><div class="skill-box">OpenCV</div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+      <div class="section-header">
+        <h2>💼 Professional Experience</h2>
+      </div>
+      <div class="section-content">
+          <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <img src="images/iisc.png" alt="IISc Logo"
+                 style="height:75px; margin-top:8px;">
+            <div>
+            <div class="item-title" style="font-weight:700;">Indian Institute of Science Bangalore</div>
+            <div class="item-meta">Project Assistant</div>
+            <div class="item-meta">2025 - Ongoing</div>
+            </div>
+          </div>
+          <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <li>Working in modelling of real site settlement in PLAXIS 2D.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <img src="images/company.png" alt="TKM Logo"
+                 style="height:75px; margin-top:8px;">
+            <div>
+            <div class="item-title" style="font-weight:700;">M/s Abhinav Kumar (Civil & Mechanical Contractor)</div>
+            <div class="item-meta">Senior Site Executive</div>
+            <div class="item-meta">Nov 2020 - April 2023</div>
+            </div>
+          </div>
+          <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <li>Spearheaded two BPCL Bokaro road projects, coordinating engineering teams and managing 60+ workers to ensure smooth execution.</li>
+              <li>Delivered road alignment surveys using Total Station and AutoCAD, ensuring precise geometric layouts and compliance.</li>
+              <li>Directed large-scale earthworks, backfilling, and compaction with GPS-controlled equipment and vibratory rollers to meet IS 2720 standards.</li>
+              <li>Supervised granular sub-base and wet mix macadam construction in strict accordance with MoRTH specifications.</li>
+              <li>Managed concrete paving operations with onsite batching plants, vacuum dewatering, and automated reinforcement placement.</li>
+              <li>Oversaw paver block installations with polyurethane sealing and expansion joint treatments for long-term durability.</li>
+              <li>Monitored site activities and workflows using Primavera P6 and Excel dashboards for real-time tracking and effective project control.</li>
+            </ul>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="section-header">
+        <h2>🎓 Education</h2>
+      </div>
+      <div class="section-content">
+        <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <img src="images/iit-hyderabad.png" alt="IIT Hyderabad Logo"
+                 style="height:75px; margin-top:8px;">
+            <div>
+            <div class="item-title" style="font-weight:700;">Indian Institute of Technology Hyderabad</div>
+            <div class="item-meta">M.Tech - Geotechnical Engineering</div>
+            <div class="item-meta">2023 - 2025</div>
+            </div>
+          </div>
+          <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <span class="cgpa">CGPA: 9.02</span></li>
+              <li>Took specialized courses in computational methods and railway engineering beyond core curriculum.</li>
+              <li>Served as Class Representative (2023–25 batch), coordinating academic and peer matters.</li>
+              <li>Worked as a Placement Coordinator, connecting students with industry opportunities.</li>
+              <li>Led initiatives as General Secretary, IGS–IITH Student Chapter, promoting geotechnical engagement.</li>
+              <li>Thesis: Passenger ride comfort in high-speed rail under geotechnical defects</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+          <div style="display:flex; align-items:flex-start; gap:12px;">
+            <img src="images/tkm.png" alt="TKM Logo"
+                 style="height:75px; margin-top:8px;">
+            <div>
+            <div class="item-title" style="font-weight:700;">TKM College of Engineering</div>
+            <div class="item-meta">B.Tech - Civil Engineering</div>
+            <div class="item-meta">2016 - 2020</div>
+            </div>
+          </div>
+          <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <span class="cgpa">CGPA: 7.21</span>
+              <li>Designed a QR scanner android app as an innovative design project in 2nd year.</li>
+              <li>Completed an internship alongside actively taking participations in various technical workshops.</li>
+              <li>Conducted a case study on Environmental Forensics Engineering at the Cochin Backwaters.</li>
+              <li>Volunteered in state-level college fests, contributing to coordination and support.</li>
+              <li>Thesis: Structural design efficiency and cost analysis of a G+6 building.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <h2>Contact Me</h2>
+      <p class="contact-text">Open to research collaborations, consulting opportunities, and discussions on geotechnical dynamics & railway engineering innovations.</p>
+      <div class="contact-grid">
+        <a href="mailto:errishabh1998@gmail.com" class="clickable" title="Email">
+          <svg class="neon-icon" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/rishabhkumar-rks16" target="_blank" class="clickable" title="LinkedIn">
+          <svg class="neon-icon" viewBox="0 0 24 24">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="tel:+91113387939" class="clickable" title="Phone">
+          <svg class="neon-icon" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </a>
+      </div>
+  </div>
+</div>
+
+<!-- Page 2 -->
+<div id="page2Page" class="page hidden">
+  <div class="main-content" style="padding-top: 20px;">
+
+    <!-- Publications -->
+<!--    <section id="publications" class="section">
+      <div class="section-header">
+        <h2>📖 Research & Publications</h2>
+      </div>
+      <div class="section-content">
+        <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+            <div class="item-title">Railway Trackâ€"Soil Interaction under Dynamic Loading</div>
+            <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <li>Advanced FEM modeling of lateritic and expansive soils under high-speed rail loading</li>
+              <li>Consolidation analysis and defect scenario simulations using Abaqus</li>
+              <li>Benchmarking of rail vibration metrics for improved design standards</li>
+              <li>Focus on passenger comfort and infrastructure longevity</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+            <div class="item-title">Deep Learning for Pavement Infrastructure Assessment</div>
+            <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <li>Automated crack detection and classification using TensorFlow and OpenCV</li>
+              <li>Dataset augmentation and post-processing for enhanced accuracy</li>
+              <li>Real-time analysis pipeline for infrastructure maintenance</li>
+              <li>Integration of ML techniques with traditional engineering assessment</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+            <div class="item-title">4D Vibration Simulation for Passenger Comfort Analysis</div>
+            <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <li>VR-integrated vibration platform with haptic feedback systems</li>
+              <li>Multi-frequency simulation capabilities (1-20Hz)</li>
+              <li>MATLAB-based data analytics for comfort threshold determination</li>
+              <li>Human factors engineering for railway design optimization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>🔬 Research Projects</h2>
+      </div>
+      <div class="section-content">
+        <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+            <div class="item-title">
+              <span class="prefix">Railway Study: </span>Advanced Dynamic SSI of Ballasted Railway Tracks over Heterogeneous Subgrade Stiffness Profiles</div>
+            <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <li>Developed a 3D plane strain FEM model in Abaqus CAE to simulate train-induced soil-track dynamic interaction.</li>
+              <li>Modeled subsoil using the Mohr-Coulomb constitutive model with consolidation effects for contrasting soil stiffness conditions.</li>
+              <li>Implemented infinite boundary conditions with spring-dashpot elements to simulate soil damping and wave energy dissipation.</li>
+              <li>Evaluated rail-top velocity response and subsoil displacement to characterize vibration propagation and soil-structure interaction.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+            <div class="item-title">
+              <span class="prefix">Machine Learning: </span>Comparative Study of Deep Learning Models for Pavement Crack Detection and Classification</div>
+            <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <li>Implemented and trained four deep learning architectures, including CNN and Transformer-based models, for pavement crack detection.</li>
+              <li>Performed image preprocessing, augmentation, and feature enhancement using Python and OpenCV to improve input data quality.</li>
+              <li>Implemented efficient training pipelines with GPU acceleration and batch optimization to handle large-scale image datasets.</li>
+              <li>Evaluated models using accuracy, precision, recall, and F1-score, ensuring reliable multi-label crack type classification.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+            <div class="item-title">
+              <span class="prefix">Passenger Comfort: </span>Passenger Vibration Perception Threshold Assessment in an immersive 4D Railway Simulation</div>
+            <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <li>Configured a vibrational seating system with VR interface by supplying controlled sinusoidal inputs to replicate rail-induced base excitations.</li>
+              <li>Acquired seat acceleration response using triaxial accelerometers and logged data for frequency-domain analysis.</li>
+              <li>Processed signals in MATLAB for noise removal, filtering, peak seat velocity computation, and transmissibility spectra.</li>
+              <li>Determined human perception thresholds across body regions within the 4–8 Hz critical range, referencing ISO 2631 comfort limits.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="item-head clickable" onclick="toggleItem(this)">
+            <div class="item-title">
+              <span class="prefix">Structural Design: </span>Structural Efficiency and Cost Benchmarking of G+6 Building under EN 1992 and IS 456:2000</div>
+            <svg class="arrow" viewBox="0 0 24 24"><path fill="url(#chev)" d="M7 10l5 5 5-5"/></svg>
+          </div>
+          <div class="item-content">
+            <ul class="custom-list">
+              <li>Modeled a G+6 reinforced concrete structure in ETABS under IS 456:2000 and EN 1992 design provisions.</li>
+              <li>Computed dead and live loads as per codal guidelines and performed linear static and dynamic response analyses.</li>
+              <li>Observed IS 456:2000 to be cost-conservative with reduced strength and ductility, while EN 1992 ensured higher structural capacity.</li>
+              <li>Evaluated storey drift, lateral displacement, and load distribution to compare global structural performance under both codes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="certificates" class="section">
+  <div class="section-header">
+    <h2>📜 Certifications</h2>
+  </div>
+  <div class="section-content">
+
+    <div class="timeline-item">
+      <div class="item-head">
+        <div class="item-title">Compass Surveying and Plane Table Surveying</div>
+        <div class="item-meta">QEEE - IIT Bombay</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="item-head">
+        <div class="item-title">Geotechnical Engineering Laboratory</div>
+        <div class="item-meta">NPTEL - IIT Bombay</div>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="item-head clickable" onclick="toggleItem(this)">
+        <div>
+          <div class="item-title">Investment Banking Experience Program</div>
+          <div class="item-meta">Finlatics | Dec 2023 - Feb 2024</div>
+        </div>
+        <svg class="arrow" viewBox="0 0 24 24">
+          <path fill="url(#chev)" d="M7 10l5 5 5-5"/>
+        </svg>
+      </div>
+      <div class="item-content">
+        <ul class="custom-list">
+          <li>Gained understanding of Private Equity fundamentals and investment strategies.</li>
+          <li>Explored types of Private Equity investments including venture capital, buyouts, and growth capital.</li>
+          <li>Learned the process of setting up a Private Equity fund, covering structure and compliance.</li>
+          <li>Applied concepts through real-world case studies, achieving an overall project rating of 88.48.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 Rishabh Kumar. All rights reserved.</footer>
+
+<!-- SVG for arrow gradients -->
+<svg width="0" height="0" aria-hidden="true">
+  <defs>
+    <linearGradient id="chev" x1="0" x2="1">
+      <stop offset="0%" stop-color="var(--accent1)"/>
+      <stop offset="100%" stop-color="var(--accent2)"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<div id="scroll-progress"></div>
+
+<script>
+// Page management (dynamic)
+function showPage(pageId) {
+  const pages = document.querySelectorAll('.page');
+  const navBtns = document.querySelectorAll('.page-nav-btn');
+
+  // Hide all pages
+  pages.forEach(page => {
+    page.classList.remove('active');
+    page.classList.add('hidden');
+  });
+
+  // Remove active state from all nav buttons
+  navBtns.forEach(btn => btn.classList.remove('active'));
+
+  // Show target page
+  const targetPage = document.getElementById(pageId + 'Page');
+  if (targetPage) {
+    targetPage.classList.remove('hidden');
+    setTimeout(() => targetPage.classList.add('active'), 50);
+  }
+
+  // Activate corresponding nav button
+  const targetBtn = document.querySelector(`.page-nav-btn[data-page="${pageId}"]`);
+  if (targetBtn) targetBtn.classList.add('active');
+
+  // Close mobile menu if open
+  const menu = document.getElementById('menu');
+  if (menu.classList.contains('active')) toggleMenu();
+
+  // Always scroll to top when switching
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function navigateTo(sectionId, page = 'page1') {
+  showPage(page);
+  setTimeout(() => {
+    const section = document.getElementById(sectionId);
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
+  }, 300);
+}
+
+// Menu functionality with enhanced smooth transitions
+function toggleMenu() {
+  const menu = document.getElementById('menu');
+  const toggle = document.querySelector('.menu-toggle');
+  const isActive = menu.classList.contains('active');
+  
+  if (!isActive) {
+    // Opening menu
+    menu.classList.add('active');
+    toggle.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  } else {
+    // Closing menu with smooth transition
+    const menuLinks = menu.querySelectorAll('a');
+    
+    // Animate links out first
+    menuLinks.forEach((link, index) => {
+      setTimeout(() => {
+        link.style.transform = 'translateX(30px)';
+        link.style.opacity = '0';
+      }, index * 50);
+    });
+    
+    // Then close the menu
+    setTimeout(() => {
+      menu.classList.remove('active');
+      toggle.classList.remove('active');
+      
+      // Reset link styles for next opening
+      setTimeout(() => {
+        menuLinks.forEach(link => {
+          link.style.transform = '';
+          link.style.opacity = '';
+        });
+        document.body.style.overflow = '';
+      }, 600);
+    }, menuLinks.length * 50 + 100);
+  }
+}
+
+// Timeline item functionality remains the same
+function toggleItem(head) {
+  const item = head.closest('.timeline-item');
+  const section = item.closest('.section');
+  section.querySelectorAll('.timeline-item.item-open').forEach(openItem => {
+    if (openItem !== item) openItem.classList.remove('item-open');
+  });
+  item.classList.toggle('item-open');
+}
+
+// Close menu when clicking outside
+document.addEventListener('click', function(e) {
+  const menu = document.getElementById('menu');
+  const toggle = document.querySelector('.menu-toggle');
+
+  if (menu.classList.contains('active') && menu.contains(e.target) && !e.target.closest('a')) {
+    toggleMenu();
+    return;
+  }
+
+  if (!menu.contains(e.target) && !toggle.contains(e.target) && menu.classList.contains('active')) { 
+    toggleMenu(); 
+  }
+});
+
+// Initialize logo click
+document.addEventListener('DOMContentLoaded', () => {
+  const logo = document.querySelector('.logo');
+  logo.addEventListener('click', () => showPage('page1'));
+});
+
+// Hero Canvas: enhanced particles + shooting stars
+const canvas = document.getElementById('heroCanvas');
+const ctx = canvas.getContext('2d');
+let w, h;
+let partCount = 20, starCount = 6;
+let particles = [], shootingStars = [];
+
+function resizeCanvas() { 
+  w = canvas.width = window.innerWidth; 
+  h = canvas.height = window.innerHeight; 
+}
+
+function Particle() {
+  this.x = Math.random() * w; 
+  this.y = Math.random() * h;
+  this.radius = Math.random() * 1.5 + 0.3;
+  this.dx = (Math.random() - 0.5) * 0.3; 
+  this.dy = (Math.random() - 0.5) * 0.3; 
+  this.alpha = 0.2 + Math.random() * 0.3;
+  this.pulse = Math.random() * Math.PI * 2;
+}
+
+Particle.prototype.draw = function() {
+  const pulseAlpha = this.alpha + Math.sin(this.pulse) * 0.1;
+  ctx.beginPath();
+  ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+  ctx.fillStyle = `rgba(0,224,255,${pulseAlpha})`;
+  ctx.shadowColor = "rgba(0,224,255,0.25)";
+  ctx.shadowBlur = 8;
+  ctx.fill(); 
+  ctx.shadowBlur = 0;
+}
+
+Particle.prototype.update = function() {
+  this.x += this.dx; 
+  this.y += this.dy;
+  this.pulse += 0.02;
+  
+  if (this.x < 0 || this.x > w) this.dx *= -1;
+  if (this.y < 0 || this.y > h) this.dy *= -1;
+};
+
+function ShootingStar() { 
+  this.reset(); 
+}
+
+ShootingStar.prototype.reset = function() {
+  this.x = Math.random() * w * 0.8; 
+  this.y = Math.random() * h * 0.4;
+  this.len = 90 + Math.random() * 80; 
+  this.speed = 3 + Math.random() * 2.5;
+  this.size = 1.6; 
+  this.waitTime = 0; 
+  this.active = true; 
+  this.alpha = 0.9;
+  this.trail = [];
+};
+
+ShootingStar.prototype.draw = function() {
+  if (!this.active) return;
+  
+  // Draw main star
+  ctx.beginPath();
+  let gradient = ctx.createLinearGradient(this.x, this.y, this.x - this.len, this.y);
+  gradient.addColorStop(0, `rgba(0, 224, 255, ${this.alpha})`);
+  gradient.addColorStop(0.6, 'rgba(0,224,255,0.1)');
+  gradient.addColorStop(1, 'rgba(0, 224, 255, 0)');
+  ctx.strokeStyle = gradient; 
+  ctx.lineWidth = this.size;
+  ctx.moveTo(this.x, this.y); 
+  ctx.lineTo(this.x - this.len, this.y); 
+  ctx.stroke();
+};
+
+ShootingStar.prototype.update = function() {
+  if (this.active) { 
+    this.x += this.speed; 
+    this.y += this.speed * 0.1; 
+    
+    if (this.x > w + this.len || this.y > h) { 
+      this.active = false; 
+      this.waitTime = 0; 
+    } 
+  } else { 
+    this.waitTime += 1; 
+    if (this.waitTime > 150 + Math.random() * 100) this.reset(); 
+  }
+};
+
+function initHeroCanvas() {
+  resizeCanvas();
+  particles = []; 
+  for (let i = 0; i < partCount; i++) particles.push(new Particle());
+  shootingStars = []; 
+  for (let i = 0; i < starCount; i++) shootingStars.push(new ShootingStar());
+}
+
+function heroAnimate() {
+  ctx.clearRect(0, 0, w, h);
+  particles.forEach(p => { p.draw(); p.update(); });
+  shootingStars.forEach(star => { star.draw(); star.update(); });
+  requestAnimationFrame(heroAnimate);
+}
+
+window.addEventListener('resize', initHeroCanvas);
+window.addEventListener('load', () => { 
+  initHeroCanvas(); 
+  heroAnimate(); 
+});
+</script>
+
+<script>
+const scrollProgress = document.getElementById("scroll-progress");
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.scrollHeight - window.innerHeight;
+  const scrolled = (scrollTop / docHeight) * 100;
+
+  scrollProgress.style.setProperty("--scroll", scrolled + "%");
+
+  // Fade in smoothly while scrolling
+  scrollProgress.style.opacity = "1";
+
+  // Fade out smoothly after 3s idle
+  clearTimeout(window.scrollFade);
+  window.scrollFade = setTimeout(() => {
+    scrollProgress.style.opacity = "0";
+  }, 3000);
+});
+</script>
+</body>
+
+</html>
+
+
+
